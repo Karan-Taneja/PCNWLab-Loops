@@ -81,7 +81,7 @@ const negateArr = array => {
     const nuArray = array
 
     for (i = 0; i < nuArray.length; i++){
-        nuArray[i] = nuArray[i] * -1
+        nuArray[i] *= -1
     }
 
     return nuArray
