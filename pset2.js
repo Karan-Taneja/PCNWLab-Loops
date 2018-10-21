@@ -21,6 +21,8 @@
     
     }
 
+    console.log(removeNegatives([-1, -2, 3, 4, -5]), "remove negatives")
+
 /*
     @func findVal
     @param {array} arr
@@ -51,7 +53,7 @@
     
     }
 
-    console.log(findVal([1, 2, 3, 4], 2))
+    console.log(findVal([1, 2, 3, 4], 2), "find value")
 
 
 /*
@@ -82,7 +84,7 @@
 
     }
 
-    console.log(removeOdds([1, 2, 3, 4]))
+    console.log(removeOdds([1, 2, 3, 4]), "remove odds")
 
 
 /*
@@ -97,7 +99,7 @@
 const addSquares = array => {
 
     const length = array.length
-    const nuArray = array
+    const nuArray = [...array]
 
 
     for (i = 0; i < length; i++) {
@@ -109,7 +111,7 @@ const addSquares = array => {
 
 }
 
-console.log(addSquares([1, 2, 3, 4]))
+console.log(addSquares([1, 2, 3, 4]), "add squares")
 
 /*
     @func doubleify
@@ -120,21 +122,19 @@ console.log(addSquares([1, 2, 3, 4]))
 */
 
 const doubleify = array => {
+    const nuArray = [...array]
 
-    const length = array.length
-    const nuArray = array
-
-    for (i = 0; i < array.length; i++){
+    for (i = 0; i < nuArray.length; i++){
 
     if (nuArray[i] !== nuArray[i - 1])
-        nuArray.splice(i, 0, array[i])
+        nuArray.splice(i, 0, nuArray[i])
 
     }
 
     return nuArray
 }
 
-console.log(doubleify([1,2,3,4]))
+console.log(doubleify([1,2,3,4]), "double")
 
 
 /*
@@ -162,4 +162,4 @@ const findMax = array => {
 
 }
 
-console.log(findMax([1, 2, 4, 3]))
+console.log(findMax([1, 2, 4, 3]), "max")

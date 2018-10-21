@@ -11,7 +11,7 @@ const average = array => {
 
     let total = 0
 
-    for (i = 0; i < array.length; i++){
+    for (let i = 0; i < array.length; i++){
         total += array[i]
     }
 
@@ -31,15 +31,16 @@ console.log(average([11, 2, 14, 37, 9]))
 
 const squareEach = array => {
 
-    const nuArray = array
+    const nuArray = [...array]
 
-    for (i = 0; i < array.length; i++){
+    for (let i = 0; i < nuArray.length; i++){
         nuArray[i] = nuArray[i] ** 2
     }
 
     return nuArray
 }
 
+console.log(10 **= 2)
 console.log(squareEach([1, 2, 3, 4]))
 
 /*
@@ -59,10 +60,10 @@ console.log(squareEach([1, 2, 3, 4]))
 
 const averageSquare = array => {
 
-    const nuArray = average(squareEach(array))
-    
-    return nuArray
+    const nuArray = [...array]
 
+    return average(squareEach(nuArray))
+    
 }
 
 console.log(averageSquare([1, 2, 3, 4]))
@@ -78,9 +79,9 @@ console.log(averageSquare([1, 2, 3, 4]))
 
 const negateArr = array => {
 
-    const nuArray = array
+    const nuArray = [...array]
 
-    for (i = 0; i < nuArray.length; i++){
+    for (let i = 0; i < nuArray.length; i++){
         nuArray[i] *= -1
     }
 
@@ -102,7 +103,7 @@ const reverseArr = array => {
 
     const nuArray = []
 
-    for (i = array.length -1; i >= 0; i--){
+    for (let i = array.length -1; i >= 0; i--){
         nuArray.push(array[i])
     }
 
