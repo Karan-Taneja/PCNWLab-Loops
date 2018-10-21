@@ -122,12 +122,12 @@ console.log(addSquares([1, 2, 3, 4]), "add squares")
 */
 
 const doubleify = array => {
-    const nuArray = [...array]
 
-    for (i = 0; i < nuArray.length; i++){
+    const nuArray = []
 
-    if (nuArray[i] !== nuArray[i - 1])
-        nuArray.splice(i, 0, nuArray[i])
+    for (i = 0; i < array.length; i++){
+
+        nuArray.push(array[i], array[i])
 
     }
 

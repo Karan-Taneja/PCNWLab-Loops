@@ -33,6 +33,7 @@ const squareEach = array => {
 
     const nuArray = [...array]
 
+
     for (let i = 0; i < nuArray.length; i++){
         nuArray[i] = nuArray[i] ** 2
     }

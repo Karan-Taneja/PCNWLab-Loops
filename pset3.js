@@ -40,25 +40,25 @@ console.log(getMiddle([1, 2, 3, 4]))
                addToMiddle([1,2,3,4], 0); // [1,2,0,3,4]
 */
 
-const addToMiddle = array => {
+const addToMiddle = (array, num) => {
 
-    let nuArray = array
+    let nuArray = [...array]
     let middleIndex = nuArray.length / 2
 
     if (middleIndex % 2 !== 0){
 
-       nuArray.splice(Math.ceil(middleIndex), 0, 0)
+       nuArray.splice(Math.ceil(middleIndex), 0, num)
        return nuArray
 
     }
 
-    nuArray.splice(middleIndex, 0, 0)
+    nuArray.splice(middleIndex, 0, num)
     return nuArray
 
 }
 
-console.log(addToMiddle([1, 2, 3]))
-console.log(addToMiddle([1, 2, 3, 4]))
+console.log(addToMiddle([1, 2, 3], "lulz"))
+console.log(addToMiddle([1, 2, 3, 4], "lulz"))
 
 
 /*
