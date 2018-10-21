@@ -8,7 +8,7 @@
 
     const removeNegatives = array => {
 
-        const nuArray = array
+        const nuArray = [...array]
 
         for (i = 0; i < nuArray.length; i++){
 

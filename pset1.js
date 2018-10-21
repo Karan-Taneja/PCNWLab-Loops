@@ -40,7 +40,6 @@ const squareEach = array => {
     return nuArray
 }
 
-console.log(10 **= 2)
 console.log(squareEach([1, 2, 3, 4]))
 
 /*
