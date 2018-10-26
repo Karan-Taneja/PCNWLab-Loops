@@ -168,30 +168,40 @@ console.log(capitalizeEachWord("The quick brown fox jumped over the lazy dog."))
                // 'The Cow and a Fox Went on the Trip'
 */
 
-const capitalizeEachWordExcept = string => {
+const capitalizeEachWordExcept = (string, array = ['the', 'and', 'a', 'on', 'an', 'to']) => {
 
     if(typeof string !== "string" || string.length === 0) {
         return "Not a valid string fam"
     }
 
+    let isException = false
     let stringArray = string.split(" ")
 
     for (let i = 0; i < stringArray.length; i++){
 
         let lowered = stringArray[i].toLowerCase()
 
-        if(lowered !== "the" && lowered !== "and" && 
-           lowered !== "a" && lowered !== "on"){
-
-               let currentString = capitalize(stringArray[i])
-               stringArray[i] = currentString
-           }
+            if (i > 0){
+                for (let j = 0; j < array.length; j++){
+                    if (lowered === array[j].toLowerCase()){
+                        isException = true
+                        break
+                    }
+                    else  {
+                        isException = false
+                    }
+                }
+            }
+            if (isException === false){
+                let currentString = capitalize(stringArray[i])
+                stringArray[i] = currentString
+            }
     }
-   
+
     return stringArray.join(" ")
 }
 
-console.log(capitalizeEachWordExcept("The cow and a fox went on the trip"))
+console.log(capitalizeEachWordExcept("The cow and a fox went on the trip", ['the', 'and', 'a', 'on']))
 
 
 /*
